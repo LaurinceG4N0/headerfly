@@ -15,10 +15,15 @@
     #include <stdlib.h>
     #include <string.h>
 
+/* UTILS_ARRAY */
+int str_is_in_array(const char *str, const char **array);
+void free_array_char(char **array, int rows);
+
 /* UTILS_ERROR */
 typedef enum {
     NULL_ARGS,
-    INVALID_FLAG
+    INVALID_FLAG,
+    REPEATED_FLAG
 } error_flag_t;
 
 typedef char * msg_t;

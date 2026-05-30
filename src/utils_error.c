@@ -9,7 +9,8 @@
 
 static const msg_t errors_msg[] = {
     "Cannot take NULL arguments.",
-    "Invalid flag."
+    "Invalid flag.",
+    "Cannot take a flag many times."
 };
 
 int write_error(char *location, error_flag_t flag)
