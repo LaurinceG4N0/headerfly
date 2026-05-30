@@ -10,6 +10,10 @@ NAME = headerfly
 CC = clang
 
 SRCS = 	main.c				\
+	./src/args/check.c		\
+	./src/args/destroy.c		\
+	./src/args/parse.c		\
+	./src/utils_error.c		\
 
 CFLAGS = -I./include/ -Wall -Wextra -Werror -g3
 

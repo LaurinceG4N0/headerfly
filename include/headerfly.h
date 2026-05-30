@@ -5,7 +5,9 @@
 ** headerfly_h
 */
 
-#ifndef HEADERFLY_H
-    #define HEADERFLY_H
+#ifndef HEADERFLY_H_
+    #define HEADERFLY_H_
+    #include "args.h"
+    #include "utils.h"
 
-#endif
+#endif /* HEADERFLY_H_ */
