@@ -23,12 +23,16 @@ void free_array_char(char **array, int rows);
 typedef enum {
     NULL_ARGS,
     INVALID_FLAG,
-    REPEATED_FLAG
+    REPEATED_FLAG,
+    FILE_NOT_CREATED
 } error_flag_t;
 
 typedef char * msg_t;
 
 int write_error(char *location, error_flag_t flag);
+
+/* UTILS_FILE */
+int write_at_header(const char *filename, char *header);
 
 /* UTILS_HELPER */
 int display_help(int value_to_return);

@@ -18,6 +18,7 @@ SRCS = 	main.c				\
 	./src/info_project/init.c	\
 	./src/utils_array.c		\
 	./src/utils_error.c		\
+	./src/utils_file.c		\
 	./src/utils_helper.c		\
 	./src/utils_inputs.c		\
 
