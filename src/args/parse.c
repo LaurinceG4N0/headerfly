@@ -13,8 +13,8 @@ args_t *init_args(void)
 
     if (args == NULL)
         return NULL;
-    args->help_flag = -1;
-    args->auto_flag = -1;
+    args->help_flag = 0;
+    args->auto_flag = 0;
     args->nb_files = 0;
     args->filenames = NULL;
     return args;
@@ -33,7 +33,7 @@ static int is_invalid_flag(char *flag)
 
 static int check_and_set_flag(char *flag, int *flag_dest)
 {
-    if (*flag_dest != -1)
+    if (*flag_dest != 0)
         return write_error(flag, REPEATED_FLAG);
     *flag_dest = 1;
     return (0);

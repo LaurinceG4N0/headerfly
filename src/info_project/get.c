@@ -7,7 +7,7 @@
 
 #include "headerfly.h"
 
-info_project_t *get_info_project(args_t *args)
+info_project_t *get_info_project(void)
 {
     info_project_t *infos = init_info_project();
 

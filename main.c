@@ -10,12 +10,15 @@
 int main(int ac, char **av)
 {
     args_t *args = parse_args(ac, av);
+    info_project_t *infos = NULL;
+    int checker = check_args(args);
 
-    display_args(args);
-    if (check_args(args) == 84) {
+    if (checker != 0) {
         destroy_args(&args);
-        return (84);
+        return (checker == 84 ? 84 : 0);
     }
+    infos = get_info_project();
     destroy_args(&args);
+    destroy_info_project(&infos);
     return (0);
 }

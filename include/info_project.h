@@ -20,6 +20,8 @@ typedef struct info_project_s {
     char *description;
 } info_project_t;
 
-info_project_t *get_info_project(args_t *args);
+info_project_t *init_info_project(void);
+info_project_t *get_info_project(void);
+void destroy_info_project(info_project_t **infos);
 
 #endif

@@ -11,6 +11,8 @@ int check_args(args_t *args)
 {
     if (args == NULL)
         return write_error(NULL, NULL_ARGS);
+    if (args->help_flag)
+        return display_help(42);
     return (0);
 }
 

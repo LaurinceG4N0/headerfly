@@ -30,4 +30,10 @@ typedef char * msg_t;
 
 int write_error(char *location, error_flag_t flag);
 
+/* UTILS_HELPER */
+int display_help(int value_to_return);
+
+/* UTILS_INPUTS */
+char *get_input(char *prompt);
+
 #endif /* UTILS_H_ */

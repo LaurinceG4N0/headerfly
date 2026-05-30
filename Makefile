@@ -13,8 +13,13 @@ SRCS = 	main.c				\
 	./src/args/check.c		\
 	./src/args/destroy.c		\
 	./src/args/parse.c		\
+	./src/info_project/destroy.c	\
+	./src/info_project/get.c	\
+	./src/info_project/init.c	\
 	./src/utils_array.c		\
 	./src/utils_error.c		\
+	./src/utils_helper.c		\
+	./src/utils_inputs.c		\
 
 CFLAGS = -I./include/ -Wall -Wextra -Werror -g3
 
