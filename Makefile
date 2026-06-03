@@ -13,6 +13,7 @@ SRCS = 	main.c				\
 	./src/args/check.c		\
 	./src/args/destroy.c		\
 	./src/args/parse.c		\
+	./src/info_project/apply.c	\
 	./src/info_project/destroy.c	\
 	./src/info_project/get.c	\
 	./src/info_project/init.c	\

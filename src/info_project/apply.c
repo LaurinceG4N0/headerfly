@@ -10,6 +10,8 @@
 char *generate_header(info_project_t *infos)
 {
     char *header = NULL;
+    char whoami[256] = {0};
+    snprintf(whoami, sizeof(whoami), "%s <%s>", infos->owner_name, infos->owner_email);
     int result = asprintf(&header,
         "/*\n"
         " * ┌─────────────────────────────────────────────────────────────────┐\n"
@@ -30,13 +32,21 @@ char *generate_header(info_project_t *infos)
         " * │ > %-61s │\n"
         " * └─────────────────────────────────────────────────────────────────┘\n"
         " */",
-        (char*[]){NULL}, info->name, info->file_concerned, info->version, 
-        info->license, info->repo_name, info->date_created, info->description
+        whoami, infos->name, infos->file_concerned, infos->version, 
+        infos->license, infos->github_url, infos->date_created, infos->description
     );
+
+    if (result == -1)
+        return NULL;
+    return header;
 }
 
 int apply_info_project(info_project_t *infos)
 {
-    (void)infos;
+    char *header = generate_header(infos);
+
+    if (header == NULL)
+        return (84);
+    printf("%s\n", header);
     return (0);
 }

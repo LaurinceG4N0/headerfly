@@ -18,6 +18,7 @@ int main(int ac, char **av)
         return (checker == 84 ? 84 : 0);
     }
     infos = get_info_project();
+    apply_info_project(infos);
     destroy_args(&args);
     destroy_info_project(&infos);
     return (0);

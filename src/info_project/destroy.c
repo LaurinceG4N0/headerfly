@@ -17,7 +17,7 @@ void destroy_info_project(info_project_t **infos)
     free((*infos)->file_concerned);
     free((*infos)->version);
     free((*infos)->license);
-    free((*infos)->repo_name);
+    free((*infos)->github_url);
     free((*infos)->date_created);
     free((*infos)->description);
     free(*infos);

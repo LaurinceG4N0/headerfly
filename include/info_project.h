@@ -15,11 +15,12 @@ typedef struct info_project_s {
     char *file_concerned;
     char *version;
     char *license;
-    char *repo_name;
+    char *github_url;
     char *date_created;
     char *description;
 } info_project_t;
 
+int apply_info_project(info_project_t *infos);
 info_project_t *init_info_project(void);
 info_project_t *get_info_project(void);
 void destroy_info_project(info_project_t **infos);
