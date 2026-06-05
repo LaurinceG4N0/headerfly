@@ -55,3 +55,7 @@ test.c
 
 # debug information files
 *.dwo
+
+# File to test program
+automatic_fill
+blabla.c

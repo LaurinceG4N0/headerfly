@@ -45,6 +45,29 @@ char *get_github_url(char *username, char *project_name)
     return github_url;
 }
 
+int get_date_created(info_project_t *infos)
+{
+    struct statx stx;
+    time_t t;
+    struct tm *date = NULL;
+    FILE *file = fopen(infos->file_concerned, "a+");
+
+    if (file == NULL)
+        return (84);
+    fclose(file);
+    if (statx(AT_FDCWD, infos->file_concerned,
+            AT_STATX_SYNC_AS_STAT, STATX_BTIME, &stx) != 0) {
+        return (84);
+    }
+    if (stx.stx_mask & STATX_BTIME) {
+        t = stx.stx_btime.tv_sec;
+        date = localtime(&t);
+        strftime(infos->date_created, 80, "%Y-%m-%d %I:%M:%S %p", date);
+        return (0);
+    }
+    return (84);
+}
+
 info_project_t *get_info_project(void)
 {
     info_project_t *infos = init_info_project();
@@ -58,5 +81,6 @@ info_project_t *get_info_project(void)
     infos->license = get_input("License: ");
     infos->github_url = get_github_url(infos->owner_name, infos->name);
     infos->description = get_input("Description of the file: ");
+    get_date_created(infos);
     return infos;
 }

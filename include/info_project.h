@@ -16,7 +16,7 @@ typedef struct info_project_s {
     char *version;
     char *license;
     char *github_url;
-    char *date_created;
+    char date_created[80];
     char *description;
 } info_project_t;
 

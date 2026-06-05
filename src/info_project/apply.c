@@ -32,7 +32,7 @@ char *generate_header(info_project_t *infos)
         " * │ > %-61s │\n"
         " * └─────────────────────────────────────────────────────────────────┘\n"
         " */",
-        whoami, infos->name, infos->file_concerned, infos->version, 
+        whoami, infos->name, infos->file_concerned, infos->version,
         infos->license, infos->github_url, infos->date_created, infos->description
     );
 
@@ -47,6 +47,7 @@ int apply_info_project(info_project_t *infos)
 
     if (header == NULL)
         return (84);
-    printf("%s\n", header);
+    write_at_header(infos->file_concerned, header);
+    free(header);
     return (0);
 }

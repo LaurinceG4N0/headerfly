@@ -7,13 +7,17 @@
 
 #ifndef UTILS_H_
     #define UTILS_H_
+    #define _GNU_SOURCE
     #define RESET "\033[0m"
     #define BOLD "\033[1m"
     #define RED "\033[31m"
     #define BLUE "\033[34m"
     #include <stdio.h>
     #include <stdlib.h>
+    #include <fcntl.h>
     #include <string.h>
+    #include <sys/stat.h>
+    #include <time.h>
 
 /* UTILS_ARRAY */
 int str_is_in_array(const char *str, const char **array);

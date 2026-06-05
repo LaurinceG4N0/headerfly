@@ -20,7 +20,6 @@ info_project_t *init_info_project(void)
     infos->version = NULL;
     infos->license = NULL;
     infos->github_url = NULL;
-    infos->date_created = NULL;
     infos->description = NULL;
     return infos;
 }

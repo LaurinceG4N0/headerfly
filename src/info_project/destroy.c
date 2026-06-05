@@ -18,7 +18,6 @@ void destroy_info_project(info_project_t **infos)
     free((*infos)->version);
     free((*infos)->license);
     free((*infos)->github_url);
-    free((*infos)->date_created);
     free((*infos)->description);
     free(*infos);
     *infos = NULL;
